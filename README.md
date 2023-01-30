@@ -19,9 +19,19 @@ A sensor reads the position of the ball.  We used a camera as the sensor, a PID 
 
 
 System Modelling:
-Mathematical model of the system and deriving the transfer functions.
+See Chapter 3 for a detailed breakdown of mathematical modelling the system and deriving the transfer functions.
+In designing a control system, the first step was to see if any mathematical models are present
+in literature that could provide a mathematical expression of the system. A review of the mathematical modelling of the system from literature was undertaken. 
+This revealed a number of assumptions, which once applied, enabled a simplified free-body diagram can be produced.
+From the free body diagram, a Lagrangian kinetic equation was used to generate equations
+of motion, resulting in a transfer function.
+
+![image](https://user-images.githubusercontent.com/69064718/215403720-f73f354e-cd4f-4d20-be4f-d086fa85987c.png)
+
 
 Software:
+See Chapter 6 for a detailed walk-through the code produced for this project.
+Tasks:
 Use image processing to detect the ball within the frame
 Develop and apply a PID controller
 Designe and create GUI to be used on the touch screen to offer modes of intereact to the user
@@ -42,4 +52,4 @@ of the PID controller, to give an output value for each servo.
 When the output angle is returned, the Director sends it to SPAS. This is the servo plate
 augmentation system. It was made to apply limits and checks on the output from the PID,
 before it is sent to the servo motors. SPAS then calls the UART class. This class converts the
-angle into binary and writes it to the UART TX to send the data to the FPGA
+angle into binary and writes it to the UART TX to send the data to the FPGA.
